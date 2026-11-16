@@ -42,6 +42,20 @@ a {
   text-decoration: none;
 }
 
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  padding: 8px;
+  background: var(--foreground);
+  color: var(--background);
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
