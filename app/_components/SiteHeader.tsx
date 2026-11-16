@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NavLink from "@/app/_components/NavLink";
 
 export default function SiteHeader() {
   return (
@@ -7,13 +8,13 @@ export default function SiteHeader() {
       <nav aria-label="Main">
         <ul>
           <li>
-            <Link href="/about">About</Link>
+            <NavLink href="/about">About</NavLink>
           </li>
           <li>
-            <Link href="/projects">Projects</Link>
+            <NavLink href="/projects">Projects</NavLink>
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <NavLink href="/contact">Contact</NavLink>
           </li>
         </ul>
       </nav>

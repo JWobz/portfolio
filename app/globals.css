@@ -31,6 +31,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+nav [aria-current="page"] {
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
