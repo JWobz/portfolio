@@ -11,7 +11,7 @@ export default function SiteHeader() {
           <span className={styles.dot}>.</span>
         </Link>
 
-        <nav aria-label="Main">
+        <nav aria-label="Main" className={styles.nav}>
           <ul className={styles.links}>
             <li>
               <Link className={styles.navLink} href="/#work">
@@ -33,13 +33,12 @@ export default function SiteHeader() {
                 Contact
               </Link>
             </li>
-            <li>
-              <a href="/resume.pdf" className={styles.resume}>
-                Résumé
-              </a>
-            </li>
           </ul>
         </nav>
+
+        <a href="/resume.pdf" className={styles.resume}>
+          Résumé
+        </a>
       </div>
     </header>
   );

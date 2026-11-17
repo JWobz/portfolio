@@ -34,6 +34,10 @@
   font-size: 15px;
 }
 
+.nav {
+  margin-left: auto;
+}
+
 .navLink:hover {
   color: var(--accent);
 }
@@ -51,6 +55,23 @@
 .resume:hover {
   background: var(--accent);
   color: var(--accent-text);
+}
+
+@media (max-width: 480px) {
+  .resume {
+    display: none;
+  }
+
+  .links {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .links {
+    font-size: 14px;
+    gap: 10px;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
