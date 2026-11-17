@@ -30,7 +30,7 @@ A portfolio that reads as "software developer who ships", with three shipped VR 
   5. `04 / Toolbox` "What I work with": label column + chips. No logos on the "Systems I have built" row.
   6. `05 / About` "From game feel to good software": bio + experience list + résumé download.
   7. `06 / Contact` "Let's build something.": big email button, LinkedIn / GitHub / Résumé.
-  8. Footer: © year + name · "Built with Next.js · source on GitHub".
+  8. Footer: © year + name · "Source on GitHub" (links to the repo).
 - **Case study (`/work/[slug]`)**, one per game, statically generated: back link + logo · eyebrow, title, pitch · trailer (muted, poster first, lazy) · facts `<dl>` (role, studio, platform, engine, released) · store button · `01 / Overview` · `02 / Systems I built` (2–3 blocks of Problem / Approach / Result + clip + 8–15 line C# snippet, titled in general software terms such as "real-time state sync" or "performance on constrained hardware") · `03 / Takeaways` (2 cards) · "Next project →" · footer with asset line.
 - Removed on purpose, don't re-add: a "Right now / live" section, an intro line under "Selected work".
 
