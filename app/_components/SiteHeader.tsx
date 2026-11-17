@@ -1,23 +1,46 @@
 import Link from "next/link";
-import NavLink from "@/app/_components/NavLink";
+import styles from "./SiteHeader.module.css";
+import { NAME } from "@/data/site";
 
 export default function SiteHeader() {
   return (
-    <header>
-      <Link href="/">Jack Warburton</Link>
-      <nav aria-label="Main">
-        <ul>
-          <li>
-            <NavLink href="/about">About</NavLink>
-          </li>
-          <li>
-            <NavLink href="/projects">Projects</NavLink>
-          </li>
-          <li>
-            <NavLink href="/contact">Contact</NavLink>
-          </li>
-        </ul>
-      </nav>
+    <header className={styles.header}>
+      <div className={`container ${styles.inner}`}>
+        <Link href="/" className={styles.logo} aria-label={`${NAME}, home`}>
+          JW
+          <span className={styles.dot}>.</span>
+        </Link>
+
+        <nav aria-label="Main">
+          <ul className={styles.links}>
+            <li>
+              <Link className={styles.navLink} href="/#work">
+                Work
+              </Link>
+            </li>
+            <li>
+              <Link className={styles.navLink} href="/#projects">
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link className={styles.navLink} href="/#about">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link className={styles.navLink} href="/#contact">
+                Contact
+              </Link>
+            </li>
+            <li>
+              <a href="/resume.pdf" className={styles.resume}>
+                Résumé
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }

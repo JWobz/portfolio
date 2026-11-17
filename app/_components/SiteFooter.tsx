@@ -1,4 +1,4 @@
-import { GITHUB_URL, LINKEDIN_URL, EMAIL } from "@/app/_lib/site";
+import { NAME, GITHUB_URL, LINKEDIN_URL, EMAIL } from "@/data/site";
 
 export default function SiteFooter() {
   return (
@@ -18,7 +18,9 @@ export default function SiteFooter() {
           <a href={`mailto:${EMAIL}`}>Email</a>
         </li>
       </ul>
-      <p>© {new Date().getFullYear()} Jack Warburton</p>
+      <p>
+        © {new Date().getFullYear()} {NAME}
+      </p>
     </footer>
   );
 }
