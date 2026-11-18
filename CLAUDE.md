@@ -23,7 +23,7 @@ A portfolio that reads as "software developer who ships", with three shipped VR 
 
 ## Site structure
 - **Homepage (`/`)**: one long page with numbered sections, linked from a sticky nav with in-page anchors (`#work`, `#projects`, `#about`, `#contact`) plus a Résumé button (PDF in `public/`).
-  1. Hero: eyebrow "HELLO, I'M", name scramble-decodes once, role line cycles every 3.5s (GAME DESIGNER / SYSTEMS PROGRAMMER / SOFTWARE DEVELOPER / 3 VR TITLES SHIPPED), one-sentence pitch, two buttons, stat strip (3+ yrs · 3 titles shipped · 2,000+ player ratings).
+  1. Hero: eyebrow "HELLO, I'M", name scramble-decodes once, role line cycles every 3.5s (SOFTWARE DEVELOPER / GAME DEVELOPER / SYSTEMS ENGINEER; Software Developer first because it's the server-rendered one), two buttons (no pitch sentence), stat strip (3+ yrs · 3 titles shipped · 2,000+ player ratings).
   2. `01 / Shipped games` "Selected work": one wide featured card + two smaller cards. Poster image, short muted loop on hover.
   3. `02 / What I do` "Design brain, engineer's hands": three outlined cards, no tool tags.
   4. `03 / Software` "Projects" (on `--bg-alt`): growing grid of project cards, "All on GitHub ↗".
@@ -52,7 +52,7 @@ A portfolio that reads as "software developer who ships", with three shipped VR 
 - Contrast checked: all text tokens pass 4.5:1 on `--bg`, `--bg-alt` and `--surface` (`--text-3` on `--surface` is the tightest at 4.7:1, so don't put it on `--media`).
 
 ## Content data (`data/`)
-- `site.ts`: name, roles, hero sentence, email, links
+- `site.ts`: name, roles, email, links
 - `stats.ts`: `{ value, label, accent? }[]`
 - `games.ts`: slug, title, year, pitch, built[], storeUrl, poster, clip, featured, caseStudy
 - `projects.ts`: name, blurb, stack[], liveUrl, codeUrl, image
@@ -70,9 +70,9 @@ A portfolio that reads as "software developer who ships", with three shipped VR 
 ## Milestones
 1. ~~Setup~~ ✓
 2. ~~Deploy early~~ ✓
-3. **Layout and styles:** tokens and fonts in `globals.css`, sticky nav with anchor links, footer, skip link, focus styles, motion toggle
+3. ~~Layout and styles~~ ✓ (tokens and fonts, sticky nav with anchor links, footer, skip link, focus styles)
 4. **Homepage sections** built from `data/` files with placeholder content (hero static first)
-5. **Scramble hero:** the role/name animation as a small Client Component
+5. **Scramble hero:** the role/name animation as a small Client Component, plus the motion toggle (a "Pause motion" button in the hero, `aria-pressed`, default from `prefers-reduced-motion`, remembered in `localStorage`). It lives in the hero because that's where all auto-updating motion is and the phone header has no room.
 6. **Case studies:** `/work/[slug]` with `generateStaticParams`, "Next project" link
 7. **Content:** real games, systems, projects, résumé
 8. **Polish:** hover clips, `next/image`, SEO metadata, Open Graph image, accessibility and Lighthouse pass, phone testing
