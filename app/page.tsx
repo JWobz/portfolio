@@ -1,5 +1,6 @@
 import Hero from "./_components/Hero";
 import Section from "./_components/Section";
+import SkillCards from "./_components/SkillCards";
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
         number={2}
         label="What I do"
       >
-        <p>Skills</p>
+        <SkillCards />
       </Section>
 
       <Section
