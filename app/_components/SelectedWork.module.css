@@ -122,6 +122,28 @@
   color: var(--text-2);
   font-size: 15px;
   font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+.storeLink:hover {
+  color: var(--text);
+}
+
+.featuredCard,
+.smallCard {
+  position: relative;
+}
+
+.featuredCard:hover,
+.smallCard:hover {
+  border-color: var(--accent);
+}
+
+.caseLink::after {
+  content: "";
+  position: absolute;
+  inset: 0;
 }
 
 @media (max-width: 768px) {
@@ -142,5 +164,19 @@
 
   .featuredBody {
     padding: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .featuredCard,
+  .smallCard {
+    transition:
+      border-color 0.2s,
+      transform 0.2s;
+  }
+
+  .featuredCard:hover,
+  .smallCard:hover {
+    transform: translateY(-4px);
   }
 }

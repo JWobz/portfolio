@@ -1,4 +1,5 @@
 import { GAMES } from "@/data/games";
+import Link from "next/link";
 import styles from "./SelectedWork.module.css";
 
 export default function SelectedWork() {
@@ -23,8 +24,14 @@ export default function SelectedWork() {
               {featuredGame.built.join(" · ")}
             </p>
             <div className={styles.featuredLinks}>
-              <p className={styles.caseLink}>
-                Read case study <span aria-hidden="true">→</span>
+              <p>
+                <Link
+                  href={`/work/${featuredGame.slug}`}
+                  className={styles.caseLink}
+                  aria-label={`Read case study: ${featuredGame.title}`}
+                >
+                  Read case study <span aria-hidden="true">→</span>
+                </Link>
               </p>
               <a
                 href={featuredGame.storeUrl}
@@ -49,8 +56,14 @@ export default function SelectedWork() {
                 <span className={styles.builtLabel}>I built: </span>
                 {game.built.join(" · ")}
               </p>
-              <p className={styles.caseLink}>
-                Read case study <span aria-hidden="true">→</span>
+              <p>
+                <Link
+                  href={`/work/${game.slug}`}
+                  className={styles.caseLink}
+                  aria-label={`Read case study: ${game.title}`}
+                >
+                  Read case study <span aria-hidden="true">→</span>
+                </Link>
               </p>
             </div>
           </article>
