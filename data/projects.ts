@@ -23,10 +23,4 @@ export const PROJECTS: Project[] = [
     liveUrl: SITE_URL,
     codeUrl: REPO_URL,
   },
-  {
-    // TODO: Replace with real value
-    name: "Project",
-    blurb: "example",
-    stack: ["Tech one", "Tech two"],
-  },
 ];

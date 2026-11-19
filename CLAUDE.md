@@ -27,7 +27,7 @@ A portfolio that reads as "software developer who ships", with three shipped VR 
   2. `01 / Shipped games` "Selected work": one wide featured card + two smaller cards. Poster image, short muted loop on hover.
   3. `02 / What I do` "Design brain, engineer's hands": three outlined cards, no tool tags.
   4. `03 / Software` "Projects" (on `--bg-alt`): growing grid of project cards.
-  5. `04 / Toolbox` "What I work with": label column + chips. No logos on the "Systems I have built" row.
+  5. `04 / Toolbox` "What I work with": label column + chips (Languages, Engines and frameworks, Tools and workflow).
   6. `05 / About` "From game feel to good software": bio + experience list + résumé download.
   7. `06 / Contact` "Let's build something.": big email button, LinkedIn / GitHub / Résumé.
   8. Footer: © year + name · "Source on GitHub" (links to the repo).

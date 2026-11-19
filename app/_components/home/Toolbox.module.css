@@ -1,0 +1,58 @@
+.toolbox {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.toolRow {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 16px 32px;
+  align-items: center;
+  padding: 22px 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.toolLabel {
+  font-size: 14px;
+  color: var(--text-2);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+
+.chipIcon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  color: var(--text-2);
+}
+
+.chip:hover .chipIcon {
+  color: var(--accent);
+}
+
+.toolRow:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .toolRow {
+    grid-template-columns: 1fr;
+  }
+}

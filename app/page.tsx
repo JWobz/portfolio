@@ -1,8 +1,9 @@
-import Hero from "./_components/Hero";
-import Section from "./_components/Section";
-import SkillCards from "./_components/SkillCards";
-import SelectedWork from "./_components/SelectedWork";
-import ProjectGrid from "./_components/ProjectGrid";
+import Hero from "./_components/home/Hero";
+import Section from "./_components/layout/Section";
+import SkillCards from "./_components/home/SkillCards";
+import SelectedWork from "./_components/home/SelectedWork";
+import ProjectGrid from "./_components/home/ProjectGrid";
+import Toolbox from "./_components/home/Toolbox";
 
 export default function Home() {
   return (
@@ -32,7 +33,7 @@ export default function Home() {
       </Section>
 
       <Section id="toolbox" title="What I work with" number={4} label="Toolbox">
-        <p>Tools</p>
+        <Toolbox />
       </Section>
 
       <Section

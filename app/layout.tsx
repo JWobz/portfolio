@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Archivo_Black, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import SiteHeader from "./_components/SiteHeader";
-import SiteFooter from "./_components/SiteFooter";
+import SiteHeader from "./_components/layout/SiteHeader";
+import SiteFooter from "./_components/layout/SiteFooter";
 
 const display = Archivo_Black({
   weight: "400",
