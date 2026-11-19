@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&*+=?";
 
@@ -12,8 +12,9 @@ export default function ScrambleText({
   paused: boolean;
 }) {
   const [display, setDisplay] = useState(text);
+  const doneRef = useRef<string | null>(null);
   useEffect(() => {
-    if (paused) return;
+    if (paused || doneRef.current === text) return;
     let revealed = 0.5;
     const timer = setInterval(() => {
       revealed += 0.5;
@@ -28,7 +29,10 @@ export default function ScrambleText({
 
       setDisplay(frame);
 
-      if (revealed >= text.length) clearInterval(timer);
+      if (revealed >= text.length) {
+        clearInterval(timer);
+        doneRef.current = text;
+      }
     }, 40);
     return () => clearInterval(timer);
   }, [text, paused]);
