@@ -1,0 +1,88 @@
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style: none;
+}
+
+.projectCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.screenshot {
+  aspect-ratio: 16 / 9;
+  background: var(--media);
+  border-radius: 8px;
+}
+
+.projectName {
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.blurb {
+  color: var(--text-2);
+  font-size: 15px;
+}
+
+.stack {
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.projectLinks {
+  display: flex;
+  gap: 18px;
+  margin-top: auto;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.liveLink {
+  color: var(--accent);
+}
+
+.codeLink {
+  color: var(--text);
+}
+
+.projectCard:hover {
+  border-color: var(--accent);
+}
+
+.liveLink:hover,
+.codeLink:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .projectCard {
+    transition:
+      border-color 0.2s,
+      transform 0.2s;
+  }
+
+  .projectCard:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 1024px) {
+  .projectGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .projectGrid {
+    grid-template-columns: 1fr;
+  }
+}

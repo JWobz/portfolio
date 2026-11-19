@@ -2,6 +2,7 @@ import Hero from "./_components/Hero";
 import Section from "./_components/Section";
 import SkillCards from "./_components/SkillCards";
 import SelectedWork from "./_components/SelectedWork";
+import ProjectGrid from "./_components/ProjectGrid";
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
         label="Software"
         alt={true}
       >
-        <p>Projects</p>
+        <ProjectGrid />
       </Section>
 
       <Section id="toolbox" title="What I work with" number={4} label="Toolbox">
