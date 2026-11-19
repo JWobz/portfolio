@@ -66,6 +66,10 @@
   outline-offset: -2px;
 }
 
+.resume > span:last-child {
+  white-space: nowrap;
+}
+
 @media (max-width: 768px) {
   .about {
     grid-template-columns: 1fr;

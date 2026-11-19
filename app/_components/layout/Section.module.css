@@ -7,6 +7,10 @@
   padding-block: 96px;
 }
 
+.centered {
+  text-align: center;
+}
+
 .eyebrow {
   font-family: var(--font-mono), monospace;
   font-size: 13px;

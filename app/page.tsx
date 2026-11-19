@@ -5,6 +5,7 @@ import SelectedWork from "./_components/home/SelectedWork";
 import ProjectGrid from "./_components/home/ProjectGrid";
 import Toolbox from "./_components/home/Toolbox";
 import About from "./_components/home/About";
+import Contact from "./_components/home/Contact";
 
 export default function Home() {
   return (
@@ -51,8 +52,9 @@ export default function Home() {
         title="Let’s build something."
         number={6}
         label="Contact"
+        centered={true}
       >
-        <p>Contact</p>
+        <Contact />
       </Section>
     </>
   );

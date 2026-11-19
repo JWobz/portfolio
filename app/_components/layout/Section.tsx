@@ -6,6 +6,7 @@ type SectionProps = {
   label: string;
   title: string;
   alt?: boolean;
+  centered?: boolean;
   children: React.ReactNode;
 };
 
@@ -15,6 +16,7 @@ export default function Section({
   label,
   title,
   alt,
+  centered,
   children,
 }: SectionProps) {
   const formattedNumber = String(number).padStart(2, "0");
@@ -24,7 +26,9 @@ export default function Section({
       aria-labelledby={`${id}-heading`}
       className={alt ? styles.alt : undefined}
     >
-      <div className={`container ${styles.inner}`}>
+      <div
+        className={`container ${styles.inner} ${centered ? styles.centered : ""}`}
+      >
         <p className={styles.eyebrow}>
           {formattedNumber} / {label}
         </p>
