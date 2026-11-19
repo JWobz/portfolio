@@ -1,4 +1,4 @@
-import Hero from "./_components/home/Hero";
+import Hero from "./_components/home/hero/Hero";
 import Section from "./_components/layout/Section";
 import SkillCards from "./_components/home/SkillCards";
 import SelectedWork from "./_components/home/SelectedWork";

@@ -3,10 +3,10 @@
 import ScrambleText from "./ScrambleText";
 import RoleCycler from "./RoleCycler";
 import styles from "./Hero.module.css";
-import { useMotionPaused } from "./useMotionPaused";
-import { usePageHidden } from "./usePageHidden";
+import { useMotionPaused } from "@/app/_hooks/useMotionPaused";
+import { usePageHidden } from "@/app/_hooks/usePageHidden";
 import { useRef } from "react";
-import { useOnScreen } from "./useOnScreen";
+import { useOnScreen } from "@/app/_hooks/useOnScreen";
 
 export default function HeroText({
   name,
