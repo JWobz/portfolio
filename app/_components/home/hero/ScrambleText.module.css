@@ -1,0 +1,23 @@
+.word {
+  white-space: nowrap;
+}
+
+.slot {
+  position: relative;
+  display: inline-block;
+}
+
+.slot > span:last-child {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ghost {
+  visibility: hidden;
+}
+
+.dim {
+  color: var(--scramble-dim);
+}

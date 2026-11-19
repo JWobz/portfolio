@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, Fragment } from "react";
+import styles from "./ScrambleText.module.css";
 
 const GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&*+=?";
 
@@ -15,9 +16,9 @@ export default function ScrambleText({
   const doneRef = useRef<string | null>(null);
   useEffect(() => {
     if (paused || doneRef.current === text) return;
-    let revealed = 0.5;
+    let revealed = 0.25;
     const timer = setInterval(() => {
-      revealed += 0.5;
+      revealed += 0.25;
       const frame = text
         .split("")
         .map((char, i) => {
@@ -37,5 +38,28 @@ export default function ScrambleText({
     return () => clearInterval(timer);
   }, [text, paused]);
   const shown = paused ? text : display;
-  return <span aria-hidden="true">{shown}</span>;
+  const realWords = text.split(" ");
+  const shownWords = shown.split(" ");
+  return (
+    <span aria-hidden="true">
+      {realWords.map((word, w) => (
+        <Fragment key={w}>
+          {w > 0 && " "}
+          <span className={styles.word}>
+            {word.split("").map((char, i) => {
+              const glyph = shownWords[w]?.[i] ?? char;
+              return (
+                <span key={i} className={styles.slot}>
+                  <span className={styles.ghost}>{char}</span>
+                  <span className={glyph === char ? undefined : styles.dim}>
+                    {glyph}
+                  </span>
+                </span>
+              );
+            })}
+          </span>
+        </Fragment>
+      ))}
+    </span>
+  );
 }
