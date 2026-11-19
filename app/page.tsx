@@ -1,13 +1,14 @@
 import Hero from "./_components/Hero";
 import Section from "./_components/Section";
 import SkillCards from "./_components/SkillCards";
+import SelectedWork from "./_components/SelectedWork";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <Section id="work" title="Selected work" number={1} label="Shipped games">
-        <p>Work</p>
+        <SelectedWork />
       </Section>
 
       <Section
