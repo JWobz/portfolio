@@ -70,16 +70,6 @@
   color: var(--accent-text);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .filledButton,
-  .outlinedButton {
-    transition:
-      background-color 0.3s ease,
-      transform 0.3s ease,
-      color 0.3s ease;
-  }
-}
-
 .stats {
   border-top: 1px solid var(--border);
 }
@@ -101,19 +91,6 @@
   border-right: none;
 }
 
-@media (max-width: 768px) {
-  .statStrip {
-    grid-template-columns: 1fr;
-  }
-  .statCell {
-    border-right: none;
-    border-top: 1px solid var(--border);
-  }
-  .statCell:first-child {
-    border-top: none;
-  }
-}
-
 .statValue {
   font-family: var(--font-display), sans-serif;
   font-size: 40px;
@@ -127,4 +104,45 @@
 .statLabel {
   font-size: 14px;
   color: var(--text-2);
+}
+
+.motionToggle {
+  margin-top: 20px;
+  padding: 6px 12px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-2);
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.motionToggle[aria-pressed="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .filledButton,
+  .outlinedButton {
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease,
+      color 0.3s ease;
+  }
+}
+
+@media (max-width: 768px) {
+  .statStrip {
+    grid-template-columns: 1fr;
+  }
+  .statCell {
+    border-right: none;
+    border-top: 1px solid var(--border);
+  }
+  .statCell:first-child {
+    border-top: none;
+  }
 }
