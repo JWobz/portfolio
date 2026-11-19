@@ -4,6 +4,7 @@ import SkillCards from "./_components/home/SkillCards";
 import SelectedWork from "./_components/home/SelectedWork";
 import ProjectGrid from "./_components/home/ProjectGrid";
 import Toolbox from "./_components/home/Toolbox";
+import About from "./_components/home/About";
 
 export default function Home() {
   return (
@@ -42,7 +43,7 @@ export default function Home() {
         number={5}
         label="About"
       >
-        <p>About</p>
+        <About />
       </Section>
 
       <Section
