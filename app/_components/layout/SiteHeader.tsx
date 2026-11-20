@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./SiteHeader.module.css";
+import { NAME } from "@/data/site";
 
 export default function SiteHeader() {
   return (
@@ -10,7 +11,7 @@ export default function SiteHeader() {
           <span className={styles.dot} aria-hidden="true">
             .
           </span>
-          <span className="visually-hidden">, Jack Warburton, home</span>
+          <span className="visually-hidden">, {NAME}, home</span>
         </Link>
 
         <nav aria-label="Main" className={styles.nav}>
