@@ -1,14 +1,16 @@
 import Link from "next/link";
 import styles from "./SiteHeader.module.css";
-import { NAME } from "@/data/site";
 
 export default function SiteHeader() {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.inner}`}>
-        <Link href="/" className={styles.logo} aria-label={`${NAME}, home`}>
+        <Link href="/" className={styles.logo}>
           JW
-          <span className={styles.dot}>.</span>
+          <span className={styles.dot} aria-hidden="true">
+            .
+          </span>
+          <span className="visually-hidden">, Jack Warburton, home</span>
         </Link>
 
         <nav aria-label="Main" className={styles.nav}>
