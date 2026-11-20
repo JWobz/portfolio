@@ -2,6 +2,10 @@ import type { StaticImageData } from "next/image";
 import { Tool, ICONS } from "./tools";
 
 import mptPoster from "@/assets/games/match-point-tennis/poster.webp";
+import mptTrophies from "@/assets/games/match-point-tennis/trophies.webp";
+
+import pickleballOnePoster from "@/assets/games/pickleball-one/poster.webp";
+import pickleDrill360Poster from "@/assets/games/pickle-drill-360/poster.webp";
 
 export const DeployedPlatforms = {
   Meta: "Meta Quest",
@@ -69,13 +73,14 @@ export const GAMES: Game[] = [
       overview: ["overview", "overview2"],
       systems: [
         {
-          title: "System one",
+          title: "Trophies",
           problem: "Problem placeholder",
           approach: "Approach placeholder",
           result: "Result placeholder",
+          media: { src: mptTrophies, alt: "" },
         },
         {
-          title: "System two",
+          title: "Player Economy",
           problem: "Problem placeholder",
           approach: "Approach placeholder",
           result: "Result placeholder",
@@ -98,6 +103,7 @@ export const GAMES: Game[] = [
     storeUrl:
       "https://www.meta.com/en-gb/experiences/pickleball-one/5276176159145627/",
     storeLabel: "Meta Quest store",
+    poster: { src: pickleballOnePoster, alt: "" },
     caseStudy: {
       role: "Software Developer",
       platform: DeployedPlatforms.Meta,
@@ -133,6 +139,7 @@ export const GAMES: Game[] = [
     built: ["Subscription System", "Data Management", "Onboarding Flow"],
     storeUrl: "https://www.pickledrill360.com/",
     storeLabel: "Official website",
+    poster: { src: pickleDrill360Poster, alt: "" },
     caseStudy: {
       role: "Software Developer",
       platform: DeployedPlatforms.Meta,
