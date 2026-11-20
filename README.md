@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Jack Warburton — Portfolio
 
-## Getting Started
+My personal portfolio: three shipped VR sports games for Meta Quest (Unity, C#), plus my software projects.
 
-First, run the development server:
+**Live site:** https://portfolio-seven-rho-gl7mkstymk.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tech stack
+
+- **Next.js** (App Router) with **TypeScript**
+- **Plain CSS Modules**: no Tailwind, no CSS-in-JS
+- **react-icons** for the tool logos (the only extra dependency)
+- Deployed on **Vercel**, with automatic deploys from `main`
+
+## Highlights
+
+- **Static by default:** every page, including one case study per game (`/work/[slug]`), is pre-rendered at build time with `generateStaticParams`.
+- **Small client bundle:** almost everything is a Server Component. Only the hero animation runs in the browser.
+- **Accessible animation:** the hero name decodes from scrambled letters and the role line cycles. Screen readers get the real text instead, and the motion:
+  - follows the visitor's `prefers-reduced-motion` setting
+  - can be paused with a button, and the choice is remembered
+  - pauses by itself when the tab is hidden or the hero is scrolled off-screen
+- **No layout shift:** each scrambling letter sits in a slot sized to the real letter, so the name never changes width.
+- **Content kept apart from code:** all text lives in typed data files in `data/`.
+
+## Project structure
+
+```
+app/
+  page.tsx              Homepage
+  work/[slug]/          Case study pages and their components
+  _components/home/     Homepage sections (hero/ holds the animation)
+  _components/layout/   Header, footer, shared Section
+  _hooks/               Motion pause, tab visibility, on-screen hooks
+data/                   Site content: games, projects, tools, about
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Running it locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Requires Node.js 20.9 or later.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Then open http://localhost:3000.

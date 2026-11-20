@@ -23,6 +23,7 @@
 
 .dot {
   color: var(--accent);
+  vertical-align: baseline;
 }
 
 .links {

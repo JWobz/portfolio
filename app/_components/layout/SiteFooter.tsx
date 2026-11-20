@@ -5,9 +5,9 @@ export default function SiteFooter() {
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.inner}`}>
-        <a>
+        <span>
           © {new Date().getFullYear()} {NAME}
-        </a>
+        </span>
         <a
           className={styles.link}
           href={REPO_URL}
