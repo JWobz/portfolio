@@ -4,6 +4,8 @@ import styles from "./page.module.css";
 import CaseStudyHeader from "./CaseStudyHeader";
 import Section from "@/app/_components/layout/Section";
 import SystemBlock from "./SystemBlock";
+import Link from "next/link";
+import { Metadata } from "next";
 
 export function generateStaticParams() {
   return GAMES.map((game) => ({ slug: game.slug }));
@@ -19,6 +21,8 @@ export default async function CaseStudyPage({
   if (foundGame === undefined) {
     notFound();
   }
+  const index = GAMES.indexOf(foundGame);
+  const nextGame = GAMES[(index + 1) % GAMES.length];
   return (
     <article>
       <div className="container">
@@ -59,6 +63,26 @@ export default async function CaseStudyPage({
           ))}
         </ul>
       </Section>
+      <footer className={`container ${styles.footer}`}>
+        <Link href={`/work/${nextGame.slug}`} className={styles.next}>
+          <span className={styles.nextLabel}>Next project</span>
+          <span className={styles.nextTitle}>
+            {nextGame.title} <span aria-hidden="true">→</span>
+          </span>
+        </Link>
+        <p className={styles.credit}>Game assets © Evans Taylor Digital</p>
+      </footer>
     </article>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/work/[slug]">): Promise<Metadata> {
+  const { slug } = await params;
+  const game = GAMES.find((game) => game.slug === slug);
+  return {
+    title: game?.title,
+    description: game?.pitch,
+  };
 }

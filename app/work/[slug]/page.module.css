@@ -37,3 +37,55 @@
 .takeaway p {
   color: var(--text-2);
 }
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-block: 64px;
+  border-top: 1px solid var(--border);
+}
+
+.next {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 28px 32px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.next:hover {
+  border-color: var(--accent);
+}
+
+.nextLabel {
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.nextTitle {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(28px, 5vw, 40px);
+}
+
+.credit {
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .next {
+    transition:
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .next:hover {
+    transform: translateY(-4px);
+  }
+}

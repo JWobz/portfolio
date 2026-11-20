@@ -23,7 +23,10 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jack Warburton",
+  title: {
+    default: "Jack Warburton",
+    template: "%s · Jack Warburton",
+  },
   description:
     "Portfolio of Jack Warburton, a Game Developer and Software Engineer.",
 };
