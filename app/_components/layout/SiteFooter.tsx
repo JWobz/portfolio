@@ -1,5 +1,6 @@
 import { NAME, REPO_URL } from "@/data/site";
 import styles from "./SiteFooter.module.css";
+import { TbArrowUpRight } from "react-icons/tb";
 
 export default function SiteFooter() {
   return (
@@ -14,7 +15,8 @@ export default function SiteFooter() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Source on GitHub
+          Source on GitHub{" "}
+          <TbArrowUpRight aria-hidden="true" className="arrow" />
         </a>
       </div>
     </footer>

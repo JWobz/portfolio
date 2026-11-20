@@ -35,6 +35,17 @@
   color: var(--accent);
 }
 
+.socialIcon {
+  vertical-align: -0.125em;
+  width: 16px;
+  height: 16px;
+  color: var(--text-2);
+}
+
+.links a:hover .socialIcon {
+  color: var(--accent);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .email {
     transition: transform 0.3s ease;

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { System } from "@/data/games";
 import styles from "./SystemBlock.module.css";
 
@@ -28,9 +29,17 @@ export default function SystemBlock({
           </div>
         </dl>
       </div>
-      <pre tabIndex={0} className={styles.code}>
-        <code>{system.code}</code>
-      </pre>
+      <div className={styles.media}>
+        {system.media && (
+          <Image
+            src={system.media.src}
+            alt={system.media.alt}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className={styles.image}
+          />
+        )}
+      </div>
     </article>
   );
 }

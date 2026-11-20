@@ -1,4 +1,5 @@
 import { SITE_URL, REPO_URL } from "@/data/site";
+import { StaticImageData } from "next/image";
 
 export type Project = {
   name: string;
@@ -6,6 +7,7 @@ export type Project = {
   stack: string[];
   liveUrl?: string;
   codeUrl?: string;
+  image?: { src: StaticImageData; alt: string };
 };
 
 export const PROJECTS: Project[] = [

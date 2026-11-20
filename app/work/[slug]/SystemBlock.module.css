@@ -40,13 +40,15 @@
   line-height: 1.6;
 }
 
-.code {
-  background: var(--surface);
+.media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--media);
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 20px 24px;
-  font-family: var(--font-mono), monospace;
-  font-size: 13px;
-  line-height: 1.6;
-  overflow-x: auto;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
 }

@@ -15,7 +15,7 @@ A portfolio that reads as "software developer who ships", with three shipped VR 
 - Editor: **VS Code** (`.vscode/settings.json` enforces LF line endings)
 
 ## Hard constraints
-- **The games are owned by Evans Taylor Digital.** Don't overclaim. Case study footer: "Game assets © Evans Taylor Digital, shown with permission".
+- **The games are owned by Evans Taylor Digital.** Don't overclaim. Case study footer: "Game assets © Evans Taylor Digital".
 - **Static stats only.** No scraping or live store data. Stats are "only goes up" numbers (no dates or averages).
 - **Not in v1:** blog, 3D, itch.io embeds, project filters, contact form.
 - **Fast:** no video or large images in the hero, no heavy effect libraries (CSS for animations, no Framer Motion).
@@ -31,7 +31,7 @@ A portfolio that reads as "software developer who ships", with three shipped VR 
   6. `05 / About` "From game feel to good software": bio + experience list + résumé download.
   7. `06 / Contact` "Let's build something.": big email button, LinkedIn / GitHub / Résumé.
   8. Footer: © year + name · "Source on GitHub" (links to the repo).
-- **Case study (`/work/[slug]`)**, one per game, statically generated: back link + logo · eyebrow, title, pitch · trailer (muted, poster first, lazy) · facts `<dl>` (role, studio, platform, engine, released) · store button · `01 / Overview` · `02 / Systems I built` (2–3 blocks of Problem / Approach / Result + clip + 8–15 line C# snippet, titled in general software terms such as "real-time state sync" or "performance on constrained hardware") · `03 / Takeaways` (2 cards) · "Next project →" · footer with asset line.
+- **Case study (`/work/[slug]`)**, one per game, statically generated: back link + logo · eyebrow, title, pitch · trailer (muted, poster first, lazy) · facts `<dl>` (role, studio, platform, engine, released) · store button · `01 / Overview` · `02 / Systems I built` (2–3 blocks of Problem / Approach / Result + screenshot or clip, no code snippets, titled in general software terms such as "real-time state sync" or "performance on constrained hardware") · `03 / Takeaways` (2 cards) · "Next project →" · footer with asset line.
 - Removed on purpose, don't re-add: a "Right now / live" section, an intro line under "Selected work".
 
 ## Design tokens

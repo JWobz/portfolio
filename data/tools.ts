@@ -1,5 +1,6 @@
 import type { IconType } from "react-icons";
 import { TbBrandCSharp } from "react-icons/tb";
+import { FaLinkedin } from "react-icons/fa";
 import {
   SiPython,
   SiUnity,
@@ -8,7 +9,7 @@ import {
   SiHtml5,
   SiReact,
   SiNextdotjs,
-  SiGit,
+  SiGithub,
   SiJira,
   SiFigma,
   SiPostman,
@@ -21,7 +22,7 @@ export type Tool = {
   icon?: IconType;
 };
 
-export const TOOLS = {
+export const ICONS = {
   csharp: { name: "C#", icon: TbBrandCSharp },
   python: { name: "Python", icon: SiPython },
   javascript: { name: "JavaScript", icon: SiJavascript },
@@ -32,12 +33,14 @@ export const TOOLS = {
   react: { name: "React", icon: SiReact },
   nextjs: { name: "Next.js", icon: SiNextdotjs },
 
-  git: { name: "Git", icon: SiGit },
+  git: { name: "Git", icon: SiGithub },
   jira: { name: "Jira", icon: SiJira },
   figma: { name: "Figma", icon: SiFigma },
   postman: { name: "Postman", icon: SiPostman },
   firebase: { name: "Firebase", icon: SiFirebase },
   googlecloud: { name: "Google Cloud", icon: SiGooglecloud },
+
+  linkedin: { name: "LinkedIn", icon: FaLinkedin },
 } satisfies Record<string, Tool>;
 
 export type ToolGroup = {
@@ -49,26 +52,26 @@ export const TOOL_GROUPS: ToolGroup[] = [
   {
     label: "Languages",
     items: [
-      TOOLS.csharp,
-      TOOLS.python,
-      TOOLS.javascript,
-      TOOLS.typescript,
-      TOOLS.html,
+      ICONS.csharp,
+      ICONS.python,
+      ICONS.javascript,
+      ICONS.typescript,
+      ICONS.html,
     ],
   },
   {
     label: "Engines and frameworks",
-    items: [TOOLS.unity, TOOLS.react, TOOLS.nextjs],
+    items: [ICONS.unity, ICONS.react, ICONS.nextjs],
   },
   {
     label: "Tools and workflow",
     items: [
-      TOOLS.git,
-      TOOLS.jira,
-      TOOLS.figma,
-      TOOLS.postman,
-      TOOLS.firebase,
-      TOOLS.googlecloud,
+      ICONS.git,
+      ICONS.jira,
+      ICONS.figma,
+      ICONS.postman,
+      ICONS.firebase,
+      ICONS.googlecloud,
     ],
   },
 ];

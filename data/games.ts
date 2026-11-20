@@ -1,4 +1,5 @@
-import { Tool, TOOLS } from "./tools";
+import type { StaticImageData } from "next/image";
+import { Tool, ICONS } from "./tools";
 
 export const DeployedPlatforms = {
   Meta: "Meta Quest",
@@ -13,7 +14,7 @@ export type System = {
   problem: string;
   approach: string;
   result: string;
-  code: string;
+  media?: { src: StaticImageData; alt: string; clip?: string };
 };
 
 export type Takeaway = {
@@ -28,6 +29,7 @@ export type CaseStudy = {
   overview: string[];
   systems: System[];
   takeaways: Takeaway[];
+  trailer?: string;
 };
 
 export type Game = {
@@ -39,6 +41,8 @@ export type Game = {
   built: string[];
   storeUrl: string;
   storeLabel: string;
+  poster?: { src: StaticImageData; alt: string };
+  clip?: string;
   featured?: boolean;
   caseStudy: CaseStudy;
 };
@@ -58,7 +62,7 @@ export const GAMES: Game[] = [
     caseStudy: {
       role: "Software Developer",
       platform: DeployedPlatforms.Meta,
-      tech: [TOOLS.unity, TOOLS.csharp],
+      tech: [ICONS.unity, ICONS.csharp],
       overview: ["overview", "overview2"],
       systems: [
         {
@@ -66,20 +70,12 @@ export const GAMES: Game[] = [
           problem: "Problem placeholder",
           approach: "Approach placeholder",
           result: "Result placeholder",
-          code: `public void Example()
-{
-    // placeholder
-}`,
         },
         {
           title: "System two",
           problem: "Problem placeholder",
           approach: "Approach placeholder",
           result: "Result placeholder",
-          code: `public void Example()
-{
-    // placeholder
-}`,
         },
       ],
       takeaways: [
@@ -102,7 +98,7 @@ export const GAMES: Game[] = [
     caseStudy: {
       role: "Software Developer",
       platform: DeployedPlatforms.Meta,
-      tech: [TOOLS.unity, TOOLS.csharp],
+      tech: [ICONS.unity, ICONS.csharp],
       overview: ["overview", "overview2"],
       systems: [
         {
@@ -110,20 +106,12 @@ export const GAMES: Game[] = [
           problem: "Problem placeholder",
           approach: "Approach placeholder",
           result: "Result placeholder",
-          code: `public void Example()
-{
-    // placeholder
-}`,
         },
         {
           title: "System two",
           problem: "Problem placeholder",
           approach: "Approach placeholder",
           result: "Result placeholder",
-          code: `public void Example()
-{
-    // placeholder
-}`,
         },
       ],
       takeaways: [
@@ -145,7 +133,7 @@ export const GAMES: Game[] = [
     caseStudy: {
       role: "Software Developer",
       platform: DeployedPlatforms.Meta,
-      tech: [TOOLS.unity, TOOLS.csharp],
+      tech: [ICONS.unity, ICONS.csharp],
       overview: ["overview", "overview2"],
       systems: [
         {
@@ -153,20 +141,12 @@ export const GAMES: Game[] = [
           problem: "Problem placeholder",
           approach: "Approach placeholder",
           result: "Result placeholder",
-          code: `public void Example()
-{
-    // placeholder
-}`,
         },
         {
           title: "System two",
           problem: "Problem placeholder",
           approach: "Approach placeholder",
           result: "Result placeholder",
-          code: `public void Example()
-{
-    // placeholder
-}`,
         },
       ],
       takeaways: [
