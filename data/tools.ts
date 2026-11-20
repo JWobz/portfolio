@@ -21,6 +21,25 @@ export type Tool = {
   icon?: IconType;
 };
 
+export const TOOLS = {
+  csharp: { name: "C#", icon: TbBrandCSharp },
+  python: { name: "Python", icon: SiPython },
+  javascript: { name: "JavaScript", icon: SiJavascript },
+  typescript: { name: "TypeScript", icon: SiTypescript },
+  html: { name: "HTML", icon: SiHtml5 },
+
+  unity: { name: "Unity", icon: SiUnity },
+  react: { name: "React", icon: SiReact },
+  nextjs: { name: "Next.js", icon: SiNextdotjs },
+
+  git: { name: "Git", icon: SiGit },
+  jira: { name: "Jira", icon: SiJira },
+  figma: { name: "Figma", icon: SiFigma },
+  postman: { name: "Postman", icon: SiPostman },
+  firebase: { name: "Firebase", icon: SiFirebase },
+  googlecloud: { name: "Google Cloud", icon: SiGooglecloud },
+} satisfies Record<string, Tool>;
+
 export type ToolGroup = {
   label: string;
   items: Tool[];
@@ -30,30 +49,26 @@ export const TOOL_GROUPS: ToolGroup[] = [
   {
     label: "Languages",
     items: [
-      { name: "C#", icon: TbBrandCSharp },
-      { name: "Python", icon: SiPython },
-      { name: "JavaScript", icon: SiJavascript },
-      { name: "TypeScript", icon: SiTypescript },
-      { name: "HTML", icon: SiHtml5 },
+      TOOLS.csharp,
+      TOOLS.python,
+      TOOLS.javascript,
+      TOOLS.typescript,
+      TOOLS.html,
     ],
   },
   {
     label: "Engines and frameworks",
-    items: [
-      { name: "Unity", icon: SiUnity },
-      { name: "React", icon: SiReact },
-      { name: "Next.js", icon: SiNextdotjs },
-    ],
+    items: [TOOLS.unity, TOOLS.react, TOOLS.nextjs],
   },
   {
     label: "Tools and workflow",
     items: [
-      { name: "Git", icon: SiGit },
-      { name: "Jira", icon: SiJira },
-      { name: "Figma", icon: SiFigma },
-      { name: "Postman", icon: SiPostman },
-      { name: "Firebase", icon: SiFirebase },
-      { name: "Google Cloud", icon: SiGooglecloud },
+      TOOLS.git,
+      TOOLS.jira,
+      TOOLS.figma,
+      TOOLS.postman,
+      TOOLS.firebase,
+      TOOLS.googlecloud,
     ],
   },
 ];

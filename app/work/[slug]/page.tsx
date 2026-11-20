@@ -1,5 +1,6 @@
 import { GAMES } from "@/data/games";
 import { notFound } from "next/navigation";
+import CaseStudyHeader from "./CaseStudyHeader";
 
 export function generateStaticParams() {
   return GAMES.map((game) => ({ slug: game.slug }));
@@ -17,7 +18,7 @@ export default async function CaseStudyPage({
   }
   return (
     <article className="container">
-      <h1>{foundGame.title}</h1>
+      <CaseStudyHeader game={foundGame} />
     </article>
   );
 }
