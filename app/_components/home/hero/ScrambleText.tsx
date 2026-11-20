@@ -4,6 +4,19 @@ import { useEffect, useState, useRef, Fragment } from "react";
 import styles from "./ScrambleText.module.css";
 
 const GLYPHS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#%&*+=?";
+const DURATION = 900; // ms for the whole word, whatever its length
+const GLYPH_EVERY = 50; // ms between new random glyphs
+
+function buildFrame(text: string, revealed: number) {
+  return text
+    .split("")
+    .map((char, i) => {
+      if (i < revealed) return char;
+      if (char === " ") return char;
+      return GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+    })
+    .join("");
+}
 
 export default function ScrambleText({
   text,
@@ -16,26 +29,23 @@ export default function ScrambleText({
   const doneRef = useRef<string | null>(null);
   useEffect(() => {
     if (paused || doneRef.current === text) return;
-    let revealed = 0.25;
-    const timer = setInterval(() => {
-      revealed += 0.25;
-      const frame = text
-        .split("")
-        .map((char, i) => {
-          if (i < revealed) return char;
-          if (char === " ") return char;
-          return GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
-        })
-        .join("");
+    let frameId = 0;
+    let start: number | null = null;
+    let lastGlyph = -Infinity;
 
-      setDisplay(frame);
-
-      if (revealed >= text.length) {
-        clearInterval(timer);
-        doneRef.current = text;
+    const tick = (now: number) => {
+      start ??= now;
+      const progress = Math.min((now - start) / DURATION, 1);
+      if (now - lastGlyph >= GLYPH_EVERY || progress === 1) {
+        lastGlyph = now;
+        setDisplay(buildFrame(text, progress * text.length));
       }
-    }, 40);
-    return () => clearInterval(timer);
+      if (progress < 1) frameId = requestAnimationFrame(tick);
+      else doneRef.current = text;
+    };
+
+    frameId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frameId);
   }, [text, paused]);
   const shown = paused ? text : display;
   const realWords = text.split(" ");
