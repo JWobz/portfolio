@@ -16,6 +16,8 @@
 }
 
 .screenshot {
+  position: relative;
+  overflow: hidden;
   aspect-ratio: 16 / 9;
   background: var(--media);
   border-radius: 8px;
@@ -61,6 +63,10 @@
 .liveLink:hover,
 .codeLink:hover {
   text-decoration: underline;
+}
+
+.image {
+  object-fit: cover;
 }
 
 @media (prefers-reduced-motion: no-preference) {

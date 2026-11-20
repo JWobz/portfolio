@@ -1,6 +1,8 @@
 import type { StaticImageData } from "next/image";
 import { Tool, ICONS } from "./tools";
 
+import mptPoster from "@/assets/games/match-point-tennis/poster.webp";
+
 export const DeployedPlatforms = {
   Meta: "Meta Quest",
 };
@@ -58,6 +60,7 @@ export const GAMES: Game[] = [
     storeUrl:
       "https://www.meta.com/en-gb/experiences/match-point-tennis/4182698635109247/",
     storeLabel: "Meta Quest store",
+    poster: { src: mptPoster, alt: "" },
     featured: true,
     caseStudy: {
       role: "Software Developer",

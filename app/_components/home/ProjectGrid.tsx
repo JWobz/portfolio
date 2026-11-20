@@ -1,4 +1,5 @@
 import { TbArrowUpRight } from "react-icons/tb";
+import Image from "next/image";
 import styles from "./ProjectGrid.module.css";
 import { PROJECTS } from "@/data/projects";
 
@@ -7,7 +8,17 @@ export default function ProjectGrid() {
     <ul className={styles.projectGrid}>
       {PROJECTS.map((project) => (
         <li key={project.name} className={styles.projectCard}>
-          <div className={styles.screenshot}></div>
+          <div className={styles.screenshot}>
+            {project.image && (
+              <Image
+                src={project.image.src}
+                alt={project.image.alt}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+                className={styles.image}
+              />
+            )}
+          </div>
           <h3 className={styles.projectName}>{project.name}</h3>
           <p className={styles.blurb}>{project.blurb}</p>
           <p className={styles.stack}>{project.stack.join(" · ")}</p>
