@@ -3,6 +3,7 @@ import { Archivo_Black, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "./_components/layout/SiteHeader";
 import SiteFooter from "./_components/layout/SiteFooter";
+import { SITE_URL } from "@/data/site";
 
 const display = Archivo_Black({
   weight: "400",
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
   },
   description:
     "Portfolio of Jack Warburton, a Game Developer and Software Engineer.",
+  metadataBase: new URL(SITE_URL),
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
