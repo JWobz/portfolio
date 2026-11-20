@@ -1,3 +1,4 @@
+import { TbArrowUpRight } from "react-icons/tb";
 import styles from "./ProjectGrid.module.css";
 import { PROJECTS } from "@/data/projects";
 
@@ -20,7 +21,7 @@ export default function ProjectGrid() {
                   rel="noopener noreferrer"
                   aria-label={`Live site: ${project.name}`}
                 >
-                  Live <span aria-hidden="true">↗</span>
+                  Live <TbArrowUpRight aria-hidden="true" className="arrow" />
                 </a>
               )}
               {project.codeUrl && (
@@ -31,7 +32,7 @@ export default function ProjectGrid() {
                   rel="noopener noreferrer"
                   aria-label={`Source code: ${project.name}`}
                 >
-                  Code <span aria-hidden="true">↗</span>
+                  Code <TbArrowUpRight aria-hidden="true" className="arrow" />
                 </a>
               )}
             </div>

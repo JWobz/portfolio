@@ -1,12 +1,13 @@
 import Link from "next/link";
 import styles from "./CaseStudyHeader.module.css";
 import { Game } from "@/data/games";
+import { TbArrowLeft, TbArrowUpRight } from "react-icons/tb";
 
 export default function CaseStudyHeader({ game }: { game: Game }) {
   return (
     <header className={styles.header}>
       <Link href="/#work" className={styles.back}>
-        <span aria-hidden="true">←</span> Back to work
+        <TbArrowLeft aria-hidden="true" className="arrow" /> Back to work
       </Link>
       <p className={styles.eyebrow}>Case study · VR sports</p>
       <h1 className={styles.title}>{game.title}</h1>
@@ -39,7 +40,8 @@ export default function CaseStudyHeader({ game }: { game: Game }) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        {game.storeLabel} <span aria-hidden="true">↗</span>
+        {game.storeLabel}{" "}
+        <TbArrowUpRight aria-hidden="true" className="arrow" />
       </a>
     </header>
   );

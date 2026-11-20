@@ -1,3 +1,4 @@
+import { TbArrowDown } from "react-icons/tb";
 import { NAME, ROLES } from "@/data/site";
 import { STATS } from "@/data/stats";
 import styles from "./Hero.module.css";
@@ -11,7 +12,7 @@ export default function Hero() {
         <HeroText name={NAME} roles={ROLES} />
         <div className={styles.buttonRow}>
           <a href="#work" className={styles.filledButton}>
-            View My Work <span aria-hidden="true">↓</span>
+            View My Work <TbArrowDown aria-hidden="true" className="arrow" />
           </a>
           <a href="#contact" className={styles.outlinedButton}>
             Get in touch

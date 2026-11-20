@@ -84,3 +84,7 @@ a {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+.arrow {
+  vertical-align: -0.125em;
+}

@@ -1,3 +1,4 @@
+import { TbArrowRight, TbArrowUpRight } from "react-icons/tb";
 import { GAMES } from "@/data/games";
 import Link from "next/link";
 import styles from "./SelectedWork.module.css";
@@ -30,7 +31,8 @@ export default function SelectedWork() {
                   className={styles.caseLink}
                   aria-label={`Read case study: ${featuredGame.title}`}
                 >
-                  Read case study <span aria-hidden="true">→</span>
+                  Read case study{" "}
+                  <TbArrowRight aria-hidden="true" className="arrow" />
                 </Link>
               </p>
               <a
@@ -39,7 +41,8 @@ export default function SelectedWork() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {featuredGame.storeLabel} <span aria-hidden="true">↗</span>
+                {featuredGame.storeLabel}{" "}
+                <TbArrowUpRight aria-hidden="true" className="arrow" />
               </a>
             </div>
           </div>
@@ -62,7 +65,8 @@ export default function SelectedWork() {
                   className={styles.caseLink}
                   aria-label={`Read case study: ${game.title}`}
                 >
-                  Read case study <span aria-hidden="true">→</span>
+                  Read case study{" "}
+                  <TbArrowRight aria-hidden="true" className="arrow" />
                 </Link>
               </p>
             </div>

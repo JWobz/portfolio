@@ -1,5 +1,6 @@
 import { BIO, EXPERIENCE } from "@/data/about";
 import styles from "./About.module.css";
+import { TbArrowDown } from "react-icons/tb";
 
 export default function About() {
   return (
@@ -24,7 +25,7 @@ export default function About() {
         <a href="/resume.pdf" download className={styles.resume}>
           <span>Download full résumé</span>
           <span>
-            PDF <span aria-hidden="true">↓</span>
+            PDF <TbArrowDown aria-hidden="true" className="arrow" />
           </span>
         </a>
       </div>

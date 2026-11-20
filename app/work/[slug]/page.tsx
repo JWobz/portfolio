@@ -6,6 +6,7 @@ import Section from "@/app/_components/layout/Section";
 import SystemBlock from "./SystemBlock";
 import Link from "next/link";
 import { Metadata } from "next";
+import { TbArrowRight } from "react-icons/tb";
 
 export function generateStaticParams() {
   return GAMES.map((game) => ({ slug: game.slug }));
@@ -67,7 +68,8 @@ export default async function CaseStudyPage({
         <Link href={`/work/${nextGame.slug}`} className={styles.next}>
           <span className={styles.nextLabel}>Next project</span>
           <span className={styles.nextTitle}>
-            {nextGame.title} <span aria-hidden="true">→</span>
+            {nextGame.title}{" "}
+            <TbArrowRight aria-hidden="true" className="arrow" />
           </span>
         </Link>
         <p className={styles.credit}>Game assets © Evans Taylor Digital</p>
