@@ -4,7 +4,7 @@ import { NAME, ROLES } from "@/data/site";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-export const alt = "Jack Warburton, software developer";
+export const alt = `${NAME}, software developer`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

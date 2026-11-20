@@ -3,7 +3,7 @@ import { Archivo_Black, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "./_components/layout/SiteHeader";
 import SiteFooter from "./_components/layout/SiteFooter";
-import { SITE_URL } from "@/data/site";
+import { NAME, SITE_URL } from "@/data/site";
 
 const display = Archivo_Black({
   weight: "400",
@@ -25,11 +25,10 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Jack Warburton",
-    template: "%s · Jack Warburton",
+    default: NAME,
+    template: `%s · ${NAME}`,
   },
-  description:
-    "Portfolio of Jack Warburton, a Game Developer and Software Engineer.",
+  description: `Portfolio of ${NAME}, a Game Developer and Software Engineer.`,
   metadataBase: new URL(SITE_URL),
 };
 
