@@ -10,7 +10,7 @@ export default function SiteHeader() {
           <span className={styles.dot} aria-hidden="true">
             .
           </span>
-          <span className="visually-hidden">, Jack Warburton, homegit </span>
+          <span className="visually-hidden">, Jack Warburton, home</span>
         </Link>
 
         <nav aria-label="Main" className={styles.nav}>
