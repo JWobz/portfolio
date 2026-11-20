@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import styles from "./page.module.css";
 import CaseStudyHeader from "./CaseStudyHeader";
 import Section from "@/app/_components/layout/Section";
+import SystemBlock from "./SystemBlock";
 
 export function generateStaticParams() {
   return GAMES.map((game) => ({ slug: game.slug }));
@@ -37,7 +38,11 @@ export default async function CaseStudyPage({
         title="Under the hood"
         alt={true}
       >
-        <p>Systems</p>
+        <div className={styles.systems}>
+          {foundGame.caseStudy.systems.map((system, i) => (
+            <SystemBlock key={system.title} system={system} number={i + 1} />
+          ))}
+        </div>
       </Section>
       <Section
         id="takeaways"

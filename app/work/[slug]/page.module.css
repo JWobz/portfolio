@@ -1,3 +1,9 @@
+.systems {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
 .overview {
   display: flex;
   flex-direction: column;
