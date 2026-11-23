@@ -2,7 +2,7 @@ import { START_YEAR } from "./stats";
 
 export const BIO: string[] = [
   "I’m a developer from New Zealand who likes building the systems that keep things running: progression, economies, subscriptions and the data underneath it all. I studied Computer Science and Product Design at the University of Canterbury, then shipped three VR sports games for Meta Quest with Evans Taylor Digital.",
-  "I like owning a feature from the first rough idea to the version people actually use, and working with designers until it feels right. Games are where I’ve done most of that so far, but I’m just as happy doing it anywhere good software matters.",
+  "I like owning a feature from the first rough idea to the version people actually use, and iterating on it until it feels right. Games are where I’ve done most of that so far, but I’m just as happy doing it anywhere good software matters.",
 ];
 
 export type Experience = {

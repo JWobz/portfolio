@@ -3,8 +3,12 @@ import { Tool, ICONS } from "./tools";
 
 import mptPoster from "@/assets/games/match-point-tennis/poster.webp";
 import mptTrophies from "@/assets/games/match-point-tennis/trophies.webp";
+import mptScreenshot from "@/assets/games/match-point-tennis/screenshot.webp";
 
 import pickleballOnePoster from "@/assets/games/pickleball-one/poster.webp";
+import pickleballOneDrill from "@/assets/games/pickleball-one/drill.webp";
+import pickleballOneScreenshot from "@/assets/games/pickleball-one/pickleballOneScreenshot.webp";
+
 import pickleDrill360Poster from "@/assets/games/pickle-drill-360/poster.webp";
 
 export const DeployedPlatforms = {
@@ -82,6 +86,7 @@ export const GAMES: Game[] = [
             "I used a lazy migration: when a player logged in, the game checked whether they’d used the new system yet. If not, it read their data from Unity Gaming Services, ran validation checks and wrote it to Firebase. The old data was never deleted, so it stayed available as an emergency backup.",
           result:
             "Players moved over with no data lost and no complaints. Firebase also ran our other systems, so this brought more of the game’s data into one place and made it simpler to maintain.",
+          media: { src: mptScreenshot, alt: "" },
         },
         {
           title: "Trophies",
@@ -90,6 +95,7 @@ export const GAMES: Game[] = [
             "Trophy progress was driven by events fired at the end of each match, so the trophy system didn’t have to be tied into gameplay code. Progress was saved with Unity Cloud Save. I also built the trophies as physical objects in VR, so players could pick them up, show them off and throw them around.",
           result:
             "Players loved them, especially the physical side. Picking up and playing with a trophy you’d earned made the reward feel real in a way a menu icon doesn’t.",
+          media: { src: mptTrophies, alt: "" },
         },
       ],
       takeaways: [
@@ -132,6 +138,7 @@ export const GAMES: Game[] = [
             "Experience came from a wide range of factors, from time played to performance in each match. Each factor had its own cap, so no single one could be farmed. I tuned the rates through calculations and playtesting to keep the pace of levelling right.",
           result:
             "Levels led into prestige ranks that showed in matches, and players earned cosmetic items along the way. It gave players something to show off and a reason to keep playing.",
+          media: { src: pickleballOneScreenshot, alt: "" },
         },
         {
           title: "Training and fitness modes",
@@ -140,6 +147,7 @@ export const GAMES: Game[] = [
             "Rather than building a new system, I extended the existing game mode system with an extra layer for training. Most modes were variations on target practice in different scenarios, such as serving or rallying. Players scored points for accuracy, and those points went to a leaderboard.",
           result:
             "A handful of training modes shipped. What we learned from them carried into PickleDrill 360, a full training app built around the same idea.",
+          media: { src: pickleballOneDrill, alt: "" },
         },
       ],
       takeaways: [
