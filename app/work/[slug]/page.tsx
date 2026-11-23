@@ -29,7 +29,7 @@ export default async function CaseStudyPage({
       <div className="container">
         <CaseStudyHeader game={foundGame} />
       </div>
-      <Section id="overview" number={1} label="Overview" title="The goal">
+      <Section id="overview" number={1} label="Overview" title="The game">
         <div className={styles.overview}>
           {foundGame.caseStudy.overview.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>

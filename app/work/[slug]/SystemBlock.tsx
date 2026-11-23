@@ -16,8 +16,8 @@ export default function SystemBlock({
         <h3 className={styles.title}>{system.title}</h3>
         <dl className={styles.steps}>
           <div>
-            <dt>Problem</dt>
-            <dd>{system.problem}</dd>
+            <dt>Goal</dt>
+            <dd>{system.goal}</dd>
           </div>
           <div>
             <dt>Approach</dt>
