@@ -28,8 +28,9 @@ export const metadata: Metadata = {
     default: NAME,
     template: `%s · ${NAME}`,
   },
-  description: `Portfolio of ${NAME}, a Game Developer and Software Engineer.`,
+  description: `Portfolio of ${NAME}, a Software and Game Developer.`,
   metadataBase: new URL(SITE_URL),
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

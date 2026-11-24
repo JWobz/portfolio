@@ -29,8 +29,8 @@ export default function SystemBlock({
           </div>
         </dl>
       </div>
-      <div className={styles.media}>
-        {system.media && (
+      {system.media && (
+        <div className={styles.media}>
           <Image
             src={system.media.src}
             alt={system.media.alt}
@@ -38,8 +38,8 @@ export default function SystemBlock({
             sizes="(max-width: 768px) 100vw, 50vw"
             className={styles.image}
           />
-        )}
-      </div>
+        </div>
+      )}
     </article>
   );
 }

@@ -52,3 +52,7 @@
 .image {
   object-fit: cover;
 }
+
+.text {
+  max-width: 70ch;
+}

@@ -17,4 +17,9 @@ export const EXPERIENCE: Experience[] = [
     place: "Evans Taylor Digital",
     period: `${START_YEAR} – 2026`,
   },
+  {
+    title: "Studied Computer Science and Game Design",
+    place: "University of Canterbury",
+    period: "2018 – 2022",
+  },
 ];
