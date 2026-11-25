@@ -7,6 +7,7 @@ import SystemBlock from "./SystemBlock";
 import Link from "next/link";
 import { Metadata } from "next";
 import { TbArrowRight } from "react-icons/tb";
+import Gallery from "./Gallery";
 
 export function generateStaticParams() {
   return GAMES.map((game) => ({ slug: game.slug }));
@@ -24,11 +25,19 @@ export default async function CaseStudyPage({
   }
   const index = GAMES.indexOf(foundGame);
   const nextGame = GAMES[(index + 1) % GAMES.length];
+  const { gallery } = foundGame.caseStudy;
   return (
     <article>
       <div className="container">
         <CaseStudyHeader game={foundGame} />
       </div>
+
+      {gallery && gallery.length > 0 && (
+        <div className={`container ${styles.gallery}`}>
+          <Gallery items={gallery} title={foundGame.title} />
+        </div>
+      )}
+
       <Section id="overview" number={1} label="Overview" title="The game">
         <div className={styles.overview}>
           {foundGame.caseStudy.overview.map((paragraph) => (

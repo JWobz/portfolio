@@ -1,15 +1,9 @@
 import type { StaticImageData } from "next/image";
 import { Tool, ICONS } from "./tools";
 
-import mptPoster from "@/assets/games/match-point-tennis/poster.webp";
-import mptTrophies from "@/assets/games/match-point-tennis/trophies.webp";
-import mptScreenshot from "@/assets/games/match-point-tennis/screenshot.webp";
-
-import pickleballOnePoster from "@/assets/games/pickleball-one/poster.webp";
-import pickleballOneDrill from "@/assets/games/pickleball-one/drill.webp";
-import pickleballOneScreenshot from "@/assets/games/pickleball-one/pickleballOneScreenshot.webp";
-
-import pickleDrill360Poster from "@/assets/games/pickle-drill-360/poster.webp";
+import { mptGallery, mptImages } from "./media/match-point-tennis";
+import { pb1Gallery, pb1Images } from "./media/pickleball-one";
+import { pd360Gallery, pd360Images } from "./media/pickledrill-360";
 
 export const DeployedPlatforms = {
   Meta: "Meta Quest",
@@ -27,6 +21,10 @@ export type System = {
   media?: { src: StaticImageData; alt: string; clip?: string };
 };
 
+export type GalleryItem =
+  | { type: "image"; src: StaticImageData; alt: string }
+  | { type: "video"; src: string; poster: StaticImageData; label: string };
+
 export type Takeaway = {
   title: string;
   text: string;
@@ -39,7 +37,7 @@ export type CaseStudy = {
   overview: string[];
   systems: System[];
   takeaways: Takeaway[];
-  trailer?: string;
+  gallery?: GalleryItem[];
 };
 
 export type Game = {
@@ -68,7 +66,7 @@ export const GAMES: Game[] = [
     storeUrl:
       "https://www.meta.com/en-gb/experiences/match-point-tennis/4182698635109247/",
     storeLabel: "Meta Quest store",
-    poster: { src: mptPoster, alt: "" },
+    poster: { src: mptImages.poster, alt: "" },
     featured: true,
     caseStudy: {
       role: "Software Developer",
@@ -87,7 +85,7 @@ export const GAMES: Game[] = [
           result:
             "Players moved over with no data lost and no complaints. Firebase also ran our other systems, so this brought more of the game’s data into one place and made it simpler to maintain.",
           media: {
-            src: mptScreenshot,
+            src: mptImages.economy,
             alt: "Player about to return the ball on the court",
           },
         },
@@ -99,7 +97,7 @@ export const GAMES: Game[] = [
           result:
             "Players loved them, especially the physical side. Picking up and playing with a trophy you’d earned made the reward feel real in a way a menu icon doesn’t.",
           media: {
-            src: mptTrophies,
+            src: mptImages.trophies,
             alt: "Player holding earned physical trophies",
           },
         },
@@ -114,6 +112,7 @@ export const GAMES: Game[] = [
           text: "Because trophies listened for match events instead of being wired into gameplay code, we could add and change them without touching the match itself. Keeping systems separate made the whole game easier to work on.",
         },
       ],
+      gallery: mptGallery,
     },
   },
 
@@ -127,7 +126,7 @@ export const GAMES: Game[] = [
     storeUrl:
       "https://www.meta.com/en-gb/experiences/pickleball-one/5276176159145627/",
     storeLabel: "Meta Quest store",
-    poster: { src: pickleballOnePoster, alt: "" },
+    poster: { src: pb1Images.poster, alt: "" },
     caseStudy: {
       role: "Software Developer",
       platform: DeployedPlatforms.Meta,
@@ -145,7 +144,7 @@ export const GAMES: Game[] = [
           result:
             "Levels led into prestige ranks that showed in matches, and players earned cosmetic items along the way. It gave players something to show off and a reason to keep playing.",
           media: {
-            src: pickleballOneScreenshot,
+            src: pb1Images.experience,
             alt: "A doubles pickleball match",
           },
         },
@@ -157,7 +156,7 @@ export const GAMES: Game[] = [
           result:
             "A handful of training modes shipped. What we learned from them carried into PickleDrill 360, a full training app built around the same idea.",
           media: {
-            src: pickleballOneDrill,
+            src: pb1Images.trainingFitness,
             alt: "A player in a training mode",
           },
         },
@@ -172,6 +171,7 @@ export const GAMES: Game[] = [
           text: "Building training modes on top of the existing game mode system got them shipped faster and left one shared code path to maintain, instead of two that slowly drift apart.",
         },
       ],
+      gallery: pb1Gallery,
     },
   },
 
@@ -184,7 +184,7 @@ export const GAMES: Game[] = [
     built: ["Subscription System", "Data Management", "Onboarding Flow"],
     storeUrl: "https://www.pickledrill360.com/",
     storeLabel: "Official website",
-    poster: { src: pickleDrill360Poster, alt: "" },
+    poster: { src: pd360Images.poster, alt: "" },
     caseStudy: {
       role: "Software Developer",
       platform: DeployedPlatforms.Meta,
@@ -201,6 +201,10 @@ export const GAMES: Game[] = [
             "Purchases went through the standard Meta Quest store. Each player’s subscription was checked against both Meta and our own record in Firebase, so access never relied on a single source. The app was online only, so the check ran every session, and an expired subscription took the player straight to the purchase screen.",
           result:
             "Meta’s purchase flow only allowed switching between certain plans, so we accepted that limit and I made the options clearer in the UI to avoid confusing players. Otherwise it unlocked content reliably for subscribers, and lapsed players always had a clear way back in.",
+          media: {
+            src: pd360Images.subscription,
+            alt: "",
+          },
         },
         {
           title: "Playspace Setup",
@@ -209,6 +213,10 @@ export const GAMES: Game[] = [
             "The app made a first guess at the player’s space, then let them move and fine-tune it with a controller. Projected lines and a wall shown in AR passthrough made it easy to see where the court sat in the real room. A minimum size check stopped anyone from starting in a space too small to play safely.",
           result:
             "Setup was quick and easy, and we had no complaints about it.",
+          media: {
+            src: pd360Images.playspace,
+            alt: "",
+          },
         },
       ],
       takeaways: [
@@ -221,6 +229,7 @@ export const GAMES: Game[] = [
           text: "Playspace setup worked best by guessing the space first and then letting players fine-tune it. Getting most of the way there automatically, with easy control over the rest, made setup quick without taking control away.",
         },
       ],
+      gallery: pd360Gallery,
     },
   },
 ];

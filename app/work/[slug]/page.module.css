@@ -78,6 +78,10 @@
   color: var(--text-3);
 }
 
+.gallery {
+  margin-bottom: 64px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .next {
     transition:
