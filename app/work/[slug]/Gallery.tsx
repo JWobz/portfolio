@@ -1,5 +1,5 @@
 import styles from "./Gallery.module.css";
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import type { GalleryItem } from "@/data/games";
 
 export default function Gallery({
@@ -19,22 +19,13 @@ export default function Gallery({
         {items.map((item, i) => (
           <li key={i} className={styles.item}>
             {item.type === "video" ? (
-              <video
-                src={item.src}
-                poster={item.poster.src}
-                aria-label={item.label}
-                controls
-                muted
-                playsInline
-                preload="none"
-                className={styles.media}
-              />
+              <GalleryVideo item={item} />
             ) : (
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
-                sizes="(max-width: 768px) 85vw, 720px"
+                sizes="(max-width: 768px) calc(85vw - 40px), 720px"
                 className={styles.media}
               />
             )}
@@ -42,5 +33,26 @@ export default function Gallery({
         ))}
       </ul>
     </section>
+  );
+}
+
+function GalleryVideo({
+  item,
+}: {
+  item: Extract<GalleryItem, { type: "video" }>;
+}) {
+  return (
+    <video
+      src={item.src}
+      poster={
+        getImageProps({ src: item.poster, alt: "", width: 360 }).props.src
+      }
+      aria-label={item.label}
+      controls
+      muted
+      playsInline
+      preload="none"
+      className={styles.media}
+    />
   );
 }
