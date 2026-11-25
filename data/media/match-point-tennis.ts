@@ -17,7 +17,19 @@ export const mptGallery: GalleryItem[] = [
     poster: poster,
     label: "Match Point Tennis trailer",
   },
-  { type: "image", src: mptScreenshot1, alt: "…" },
-  { type: "image", src: mptScreenshot2, alt: "…" },
-  { type: "image", src: mptScreenshot3, alt: "…" },
+  {
+    type: "image",
+    src: mptScreenshot1,
+    alt: "First-person view swinging a racket on a clay court, with a ball tracer and a speed and spin readout",
+  },
+  {
+    type: "image",
+    src: mptScreenshot2,
+    alt: "A player avatar flexing for the camera on a night-time grass court, with an opponent behind",
+  },
+  {
+    type: "image",
+    src: mptScreenshot3,
+    alt: "First-person view hitting a ball inside a wooden indoor tennis hall",
+  },
 ];

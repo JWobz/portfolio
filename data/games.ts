@@ -203,7 +203,7 @@ export const GAMES: Game[] = [
             "Meta’s purchase flow only allowed switching between certain plans, so we accepted that limit and I made the options clearer in the UI to avoid confusing players. Otherwise it unlocked content reliably for subscribers, and lapsed players always had a clear way back in.",
           media: {
             src: pd360Images.subscription,
-            alt: "",
+            alt: "A virtual court and wall placed over a real concrete court in passthrough",
           },
         },
         {
@@ -215,7 +215,7 @@ export const GAMES: Game[] = [
             "Setup was quick and easy, and we had no complaints about it.",
           media: {
             src: pd360Images.playspace,
-            alt: "",
+            alt: "A drill with a ball machine and highlighted target zones on the court",
           },
         },
       ],

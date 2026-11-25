@@ -19,9 +19,29 @@ export const pb1Gallery: GalleryItem[] = [
     poster: poster,
     label: "Pickleball One trailer",
   },
-  { type: "image", src: pb1Screenshot1, alt: "…" },
-  { type: "image", src: pb1Screenshot2, alt: "…" },
-  { type: "image", src: pb1Screenshot3, alt: "…" },
-  { type: "image", src: pb1Screenshot4, alt: "…" },
-  { type: "image", src: pb1Screenshot5, alt: "…" },
+  {
+    type: "image",
+    src: pb1Screenshot1,
+    alt: "First-person view holding a paddle on a backyard court, with a scoreboard showing a game against the AI",
+  },
+  {
+    type: "image",
+    src: pb1Screenshot2,
+    alt: "Two paddles touching above the net against a blue sky",
+  },
+  {
+    type: "image",
+    src: pb1Screenshot3,
+    alt: "A doubles match at sunset beside the Sphinx and pyramids",
+  },
+  {
+    type: "image",
+    src: pb1Screenshot4,
+    alt: "A rally training mode showing the current and longest rally count",
+  },
+  {
+    type: "image",
+    src: pb1Screenshot5,
+    alt: "Results screen with shot statistics, accuracy figures and an XP tab",
+  },
 ];
