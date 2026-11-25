@@ -15,7 +15,7 @@ export default function HeroText({
   name: string;
   roles: string[];
 }) {
-  const [paused, togglePaused] = useMotionPaused();
+  const [paused /*, togglePaused*/] = useMotionPaused();
   const hidden = usePageHidden();
   const heroRef = useRef<HTMLDivElement>(null);
   const onScreen = useOnScreen(heroRef);
@@ -30,6 +30,7 @@ export default function HeroText({
         <span className="visually-hidden">{roles.join(", ")}</span>
         <RoleCycler roles={roles} paused={stopped} />
       </p>
+      {/* Hiding Pause motion
       <button
         type="button"
         className={styles.motionToggle}
@@ -37,7 +38,7 @@ export default function HeroText({
         onClick={togglePaused}
       >
         Pause motion
-      </button>
+      </button>*/}
     </div>
   );
 }
